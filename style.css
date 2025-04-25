@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -56,7 +58,7 @@ body {
 }
 .nav{
     display:grid;
-    grid-template-columns: 3.91vw 3.91vw 27.73vw 23.95vw 3.56vw 5.7vw 3.56vw 3.73vw 7.16VW 5.86VW 8.46VW;
+    grid-template-columns: 3.91vw 3.91vw 27.73vw 21.15vw 5vw 7vw 5vw 3.73vw 7.16VW 5.86VW 8.46VW;
     grid-template-rows: 55px;
     width:100vw;
     padding:8px;
@@ -112,12 +114,26 @@ body {
     background: rgb(37, 36, 36);
     border:2px solid black;
     padding:5px 10px;
+    cursor: pointer;
 }
 .search>input::placeholder{
+    font-family: "Roboto", sans-serif;
     color:rgba(255, 255, 255, 0.549);
     font-weight: 400;
     font-size: 1rem;
     padding-left:50px;
+}
+@keyframes search{
+    0%{
+        background-color: rgb(37, 36, 36);
+    }
+    100%{
+        background-color: rgb(60, 59, 59);
+    }
+}
+.search>input:hover{
+    animation: search 0.5s forwards;
+    border:0.5px solid rgb(95, 94, 94);
 }
 .search>span{
     color:rgba(255, 255, 255, 0.549);
@@ -147,7 +163,7 @@ body {
 .prem,.supp,.down{
     /* color:white; */
     font-size:calc(1rem - 1px);
-    /* font-weight:300; */
+    font-weight:900;
     background-color: black;
     border:2px solid black;
     padding:8px;
@@ -162,6 +178,7 @@ body {
 }
 .down{
     grid-column: 7/8;
+    /* justify-self:right; */
 }
 @keyframes bold {
     0%{
