@@ -11,33 +11,40 @@ body {
     overflow-y:auto;
 }
 .body{
-    /* display:flex; */
+    display:flex;
     position:fixed;
-    top:73.92px;
+    top:58.92px;
 }
 .left{
     background-color: rgba(37, 35, 35, 0.453);
     height:90vh;
-    width:26vw;
+    width:max(calc(26vw - 40px),300px);
     /* padding:0 2vw; */
     /* color:rgb(126, 125, 125); */
-    margin:0 4px;
+    margin:4px;
     border-radius:12px;
     /* border:2px solid red; */
-    position:fixed;
+    /* position:fixed; */
     /* z-index: 2; */
+    overflow: hidden;
+}
+.leftcontent{
+    display:flex;
+    flex-direction:column;
+    /* flex-wrap: wrap; */
+    gap:30px;
 }
 .leftnav{
     /* border:2px solid red; */
     /* padding:10px 50px 0px 0px; */
     padding:0.98vw 1.63vw;
-    width:calc(26vw - 20x);
+    width:max(calc(26vw - 20x),280px);
     display: flex;
     /* margin:0px auto; */
     /* align-items: start; */
     justify-content: space-between;
 }
-.left>.leftnav>.add{
+.left>.leftcontent>.leftnav>.add{
     font-size: 25px;
     color:rgb(172, 166, 166);
     height:40px;
@@ -47,16 +54,92 @@ body {
     align-items: center;
     border-radius: 50%;
 }
-.left>.leftnav>.add:hover{
+.left>.leftcontent>.leftnav>.add:hover{
     background-color: rgba(77, 74, 74, 0.211);
     color:white;
     
 }
-.left>.leftnav>.library{
+.left>.leftcontent>.leftnav>.library{
     color:white;
     align-self: center;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+}
+.left>.leftcontent>.extraboxes{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    /* border:2px solid yellow; */
+}
+.left>.leftcontent>.extraboxes>.top1,.left>.leftcontent>.extraboxes>.top2{
+    width:max(calc(25vw - 50px),295px);
+    /* width:295px; */
+    height:calc(20vh - 5px);
+    display:flex;
+    flex-direction:column;
+    gap:17px;
+    /* flex-shrink: 2; */
+    padding-left:20px;
+    padding-top:20px;
+    box-sizing: border-box;
+    /* padding-top:10px; */
+    color:white;
+    /* background-color: red; */
+    /* border:2px solid red; */
+    margin:0px auto;
+    background-color: #1f1f1f;
+    border-radius: 7px;
+}
+.left>.leftcontent>.extraboxes>.top1>.firstpl,.left>.leftcontent>.extraboxes>.top2>.secondpl{
+    font-size:calc(1rem + 2px);
+    font-weight: 900;
+}
+.left>.leftcontent>.extraboxes>.top1>.firstpl2,.left>.leftcontent>.extraboxes>.top2>.secondpl2{
+    font-weight: 500;
+    font-size: calc(1rem - 2px);
+}
+.left>.leftcontent>.extraboxes>.top1>.firstplbtn,.left>.leftcontent>.extraboxes>.top2>.secondplbtn{
+    width:130px;
+    height:35px;
+    font-weight: 700;
+    /* height:90px; */
+    display: inline-block;
+    /* padding:0px 50px; */
+    border:1px solid #1f1f1f;
+    border-radius: 22px;
+}
+.firstpl{
+    font-size:calc(1rem + 2px);
+}
+.footerclass{
+    display:flex;
+    flex-direction: column;
+}
+.left>.leftcontent>.footerclass>.footer{
+    width:88%;
+    height:50px;
+    font-size: 13px;
+    /* margin-left:35px;
+    margin-top:20px; */
+    margin:20px auto;
+    /* border:2px solid red; */
+    color:#929292;
+    display: flex;
+    flex-wrap: wrap;
+    gap:17px;
+}
+
+.left>.leftcontent>.footerclass>.cookies2{
+    width:47px;
+    /* border:2px solid red; */
+    color:rgba(255, 255, 255, 0.886);
+    font-size: 14px;
+    margin-left:20px;
+    /* margin-top: 1.35vh; */
+}
+.left>.leftcontent>.footerclass>.cookies2:hover{
+    cursor:pointer;
+    text-decoration: underline;
 }
 .right{
     background: linear-gradient(
@@ -67,15 +150,17 @@ body {
 );
     
     height:90vh;
-    width:72.1vw;
+    width:calc(72.1vw + 40px);
     margin: 4px;
     border-radius:12px;
-    position:absolute;
-    left:calc(26vw + 8px);
+    /* position:absolute;
+    left:max(calc(26vw - 32px),300px); */
     /* overflow-x: hidden; */
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     overflow-y:auto;
-    padding:5px;
+    flex-shrink: 1.5;
+    padding:4px;
+    /* right:20px; */
 }
 .right::-webkit-scrollbar{
     width:15px;
@@ -93,9 +178,11 @@ body {
     display:grid;
     grid-template-columns: 3.91vw 3.91vw 27.73vw 21.15vw 5vw 7vw 5vw 3.73vw 7.16VW 5.86VW 8.46VW;
     grid-template-rows: 55px;
-    width:100vw;
-    padding:8px;
-    margin:8px;
+    width:98vw;
+    margin:6px auto;
+    /* border:1px solid red; */
+    /* padding:8px; */
+    /* margin:8px; */
     place-items:center;
 }
 .nav > .logo {
@@ -255,11 +342,12 @@ body {
     /* background-color: #B3B3B3; */
 }
 .login{
-    height:50px;
-    width:120px;
+    height:40px;
+    width:100px;
     font-weight:750;
     border-radius:30px;
     font-size:1rem;
+    border:none;
 }
 .login:hover{
     font-weight: 900;
